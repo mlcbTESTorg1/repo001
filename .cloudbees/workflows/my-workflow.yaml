@@ -2,9 +2,7 @@ apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 jobs:
   build:
     steps:
@@ -13,13 +11,3 @@ jobs:
         shell: sh
         run: |
           echo "hello world"
-    needs:
-      - myapproval001
-  myapproval001:
-    timeout-minutes: 4320
-    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
-    with:
-      approvers: ""
-      disallowLaunchByUser: false
-      notifyAllEligibleUsers: false
-      instructions: ""
