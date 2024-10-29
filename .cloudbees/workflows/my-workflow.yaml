@@ -11,3 +11,6 @@ jobs:
           echo "hello world"
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
