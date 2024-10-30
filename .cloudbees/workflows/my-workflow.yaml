@@ -15,4 +15,3 @@ on:
       - main
     tags:
       - "**"
-  workflow_dispatch:
